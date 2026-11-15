@@ -1,181 +1,229 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Awab Abdelgadir - Front-End Developer and Management Information Systems graduate.">
 <title>Awab Abdelgadir | Front-End Developer</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --bg: #080d18;
-  --surface: #101a2c;
-  --surface2: #152239;
-  --text: #edf3ff;
-  --muted: #9baac0;
-  --accent: #67e8c0;
-  --border: rgba(255,255,255,.1);
+    --bg: #080d18;
+    --surface: #101a2c;
+    --surface2: #152239;
+    --text: #edf3ff;
+    --muted: #9baac0;
+    --accent: #67e8c0;
+    --border: rgba(255,255,255,.10);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: font-family .2s;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
 }
 
 .container {
-  width: min(1100px, 90%);
-  margin: auto;
+    width: min(1100px, 90%);
+    margin: auto;
 }
 
+/* NAVIGATION */
+
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(8,13,24,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,13,24,.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
 }
 
 nav {
-  min-height: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: 800;
-  color: var(--accent);
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--accent);
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .nav-links a {
-  color: var(--muted);
-  font-size: 14px;
-  transition: .2s;
+    color: var(--muted);
+    font-size: 14px;
+    transition: .2s;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+    color: var(--accent);
+}
+
+.lang-switch {
+    display: flex;
+    gap: 7px;
+    direction: ltr;
 }
 
 .lang-switch button {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 7px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 5px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
 }
 
+.lang-switch button.active,
 .lang-switch button:hover {
-  background: var(--surface2);
+    background: var(--accent);
+    color: #08151a;
+    border-color: var(--accent);
 }
+
+/* GENERAL SECTIONS */
 
 section {
-  padding: 85px 0;
-  border-bottom: 1px solid var(--border);
+    padding: 85px 0;
+    border-bottom: 1px solid var(--border);
 }
 
+.section-label {
+    color: var(--accent);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.section-description {
+    color: var(--muted);
+    max-width: 750px;
+    margin-bottom: 30px;
+}
+
+/* HERO */
+
 .hero {
-  padding: 100px 0 85px;
+    padding: 100px 0 85px;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.5fr .8fr;
-  align-items: center;
-  gap: 55px;
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    align-items: center;
+    gap: 55px;
 }
 
 .status {
-  display: inline-block;
-  color: var(--accent);
-  background: rgba(103,232,192,.09);
-  padding: 7px 13px;
-  border-radius: 30px;
-  font-size: 13px;
-  margin-bottom: 20px;
+    display: inline-block;
+    color: var(--accent);
+    background: rgba(103,232,192,.09);
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
 h1 {
-  font-size: clamp(40px, 6vw, 66px);
-  line-height: 1.12;
-  margin-bottom: 15px;
-  letter-spacing: -2px;
+    font-size: clamp(40px, 6vw, 66px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -2px;
 }
 
 .arabic-name {
-  color: var(--muted);
-  font-size: 21px;
-  margin-bottom: 25px;
+    color: var(--muted);
+    font-size: 21px;
+    margin-bottom: 25px;
 }
 
 .hero h2 {
-  font-size: 25px;
-  margin-bottom: 12px;
+    font-size: 25px;
+    margin-bottom: 12px;
 }
 
 .hero p {
-  color: var(--muted);
-  max-width: 620px;
-  margin-bottom: 25px;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 25px;
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 9px;
-  font-weight: bold;
-  background: var(--accent);
-  color: #08151a;
-  transition: .2s;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-weight: 700;
+    background: var(--accent);
+    color: #08151a;
+    border: 1px solid var(--accent);
+    transition: .2s;
+    cursor: pointer;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .btn.secondary {
-  color: var(--text);
-  background: var(--surface2);
-  border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--surface2);
+    border: 1px solid var(--border);
 }
 
+/* PROFILE CARD */
+
 .profile-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
 }
 
 .profile-icon {
@@ -187,7 +235,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0;
+    background: var(--surface2);
+    color: var(--accent);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
 .profile-icon img {
@@ -199,284 +251,347 @@ h1 {
 }
 
 .profile-card .item {
-  padding: 13px 0;
-  border-bottom: 1px solid var(--border);
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .profile-card .item:last-child {
-  border: none;
+    border: none;
 }
 
 .profile-card small {
-  color: var(--muted);
-  display: block;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 3px;
 }
 
 .profile-card strong {
-  font-size: 15px;
+    font-size: 15px;
 }
 
-.section-label {
-  color: var(--accent);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.section-title {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.section-description {
-  color: var(--muted);
-  max-width: 700px;
-  margin-bottom: 30px;
-}
+/* PROJECTS */
 
 .filters {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
 }
 
 .filter-btn {
-  padding: 9px 17px;
-  border-radius: 30px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  background: transparent;
-  cursor: pointer;
+    padding: 9px 17px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: transparent;
+    cursor: pointer;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: var(--accent);
-  color: #08151a;
-  border-color: var(--accent);
+    background: var(--accent);
+    color: #08151a;
+    border-color: var(--accent);
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
 .project {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 25px;
-  transition: .25s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    transition: .25s;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
+    transform: translateY(-5px);
+    border-color: var(--accent);
 }
 
 .project-number {
-  color: var(--accent);
-  font-size: 13px;
+    color: var(--accent);
+    font-size: 13px;
 }
 
 .project h3 {
-  font-size: 23px;
-  margin: 8px 0;
+    font-size: 23px;
+    margin: 8px 0;
 }
 
 .project p {
-  color: var(--muted);
-  font-size: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 7px;
 }
 
 .tags {
-  margin-top: 18px;
-  color: var(--accent);
-  font-size: 12px;
+    margin-top: 18px;
+    color: var(--accent);
+    font-size: 12px;
 }
 
+/* EXPERIENCE */
+
 .experience-list {
-  border-left: 2px solid var(--accent);
-  margin-left: 8px;
+    border-left: 2px solid var(--accent);
+    margin-left: 8px;
 }
 
 .experience-item {
-  padding: 0 0 35px 25px;
-  position: relative;
+    padding: 0 0 35px 25px;
+    position: relative;
 }
 
 .experience-item::before {
-  content: "";
-  position: absolute;
-  left: -7px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
 }
 
 .date {
-  color: var(--accent);
-  font-size: 13px;
+    color: var(--accent);
+    font-size: 13px;
 }
 
 .experience-item h3 {
-  font-size: 21px;
-  margin: 6px 0;
+    font-size: 21px;
+    margin: 6px 0;
 }
 
 .experience-item h4 {
-  color: var(--muted);
-  font-weight: normal;
-  margin-bottom: 8px;
+    color: var(--muted);
+    font-weight: normal;
+    margin-bottom: 8px;
 }
 
 .experience-item p {
-  color: var(--muted);
-  font-size: 14px;
+    color: var(--muted);
+    font-size: 14px;
 }
 
+/* ABOUT */
+
 .about-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 35px;
-  border-radius: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 18px;
 }
 
 .about-card p {
-  color: var(--muted);
-  font-size: 17px;
-  max-width: 850px;
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 850px;
 }
 
+/* SKILLS */
+
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-  margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .skill-card {
-  padding: 22px;
-  border-radius: 13px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 13px;
+    background: var(--surface);
+    border: 1px solid var(--border);
 }
 
 .skill-card h3 {
-  color: var(--accent);
-  font-size: 16px;
-  margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .skill-card p {
-  color: var(--muted);
-  font-size: 14px;
+    color: var(--muted);
+    font-size: 14px;
 }
 
+/* CONTACT */
+
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
 }
 
 .contact-info {
-  color: var(--muted);
+    color: var(--muted);
 }
 
 .contact-info p {
-  margin: 13px 0;
+    margin: 13px 0;
 }
 
 .contact-info a {
-  color: var(--accent);
+    color: var(--accent);
+    overflow-wrap: anywhere;
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 14px;
-  font: inherit;
+    width: 100%;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 14px;
+    font: inherit;
 }
 
 .contact-form textarea {
-  min-height: 130px;
-  resize: vertical;
+    min-height: 130px;
+    resize: vertical;
 }
 
 .contact-form button {
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
+    font-size: 15px;
 }
+
+/* FOOTER */
 
 footer {
-  padding: 30px 0;
-  color: var(--muted);
-  text-align: center;
-  font-size: 13px;
+    padding: 30px 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
 }
 
-[dir="rtl"] {
-  text-align: right;
+/* COMPLETE ARABIC RTL MODE */
+
+html[lang="ar"] body {
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    line-height: 1.9;
 }
 
-[dir="rtl"] .experience-list {
-  border-left: none;
-  border-right: 2px solid var(--accent);
-  margin-left: 0;
-  margin-right: 8px;
+html[lang="ar"] nav,
+html[lang="ar"] .nav-links,
+html[lang="ar"] .hero-grid,
+html[lang="ar"] .contact-grid {
+    direction: rtl;
 }
 
-[dir="rtl"] .experience-item {
-  padding: 0 25px 35px 0;
+html[lang="ar"] .nav-links {
+    gap: 25px;
 }
 
-[dir="rtl"] .experience-item::before {
-  left: auto;
-  right: -7px;
+html[lang="ar"] .hero,
+html[lang="ar"] .profile-card,
+html[lang="ar"] .project,
+html[lang="ar"] .skill-card,
+html[lang="ar"] .about-card,
+html[lang="ar"] .contact-info,
+html[lang="ar"] .contact-form {
+    text-align: right;
 }
+
+html[lang="ar"] h1 {
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+
+html[lang="ar"] .section-label {
+    letter-spacing: 0;
+}
+
+html[lang="ar"] .hero p,
+html[lang="ar"] .section-description,
+html[lang="ar"] .about-card p {
+    line-height: 2;
+}
+
+html[lang="ar"] .buttons,
+html[lang="ar"] .filters {
+    direction: rtl;
+}
+
+html[lang="ar"] .experience-list {
+    border-left: none;
+    border-right: 2px solid var(--accent);
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+html[lang="ar"] .experience-item {
+    padding: 0 25px 35px 0;
+}
+
+html[lang="ar"] .experience-item::before {
+    left: auto;
+    right: -7px;
+}
+
+html[lang="ar"] .lang-switch {
+    direction: ltr;
+}
+
+html[lang="ar"] input,
+html[lang="ar"] textarea {
+    text-align: right;
+}
+
+html[lang="ar"] .project-number,
+html[lang="ar"] .date,
+html[lang="ar"] .tags {
+    direction: rtl;
+}
+
+/* MOBILE */
 
 @media(max-width: 750px) {
-  .hero-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
+    .hero-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .projects,
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+    .projects,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .nav-links {
-    display: none;
-  }
+    .nav-links {
+        display: none;
+    }
 
-  section {
-    padding: 65px 0;
-  }
+    section {
+        padding: 65px 0;
+    }
 
-  .hero {
-    padding-top: 65px;
-  }
+    .hero {
+        padding-top: 65px;
+    }
 
-  h1 {
-    font-size: 44px;
-  }
+    h1 {
+        font-size: 44px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
 }
 </style>
 </head>
@@ -484,298 +599,614 @@ footer {
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <a href="#home" class="logo">Awab.</a>
+<div class="container">
+<nav>
 
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
+    <a href="#home" class="logo">Awab.</a>
+
+    <div class="nav-links">
+        <a href="#work" data-en="Work" data-ar="أعمالي">Work</a>
+        <a href="#experience" data-en="Experience" data-ar="الخبرات العملية">Experience</a>
+        <a href="#about" data-en="About" data-ar="نبذة عني">About</a>
+        <a href="#contact" data-en="Contact" data-ar="تواصل معي">Contact</a>
+    </div>
+
+    <div class="lang-switch">
+        <button class="active" type="button" onclick="setLanguage('en')">EN</button>
+        <button type="button" onclick="setLanguage('ar')">عربي</button>
+    </div>
+
+</nav>
+</div>
 </header>
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 <div class="container hero-grid">
 
-  <div>
-    <span class="status" data-en="Front-end developer · Open to roles"
-      Front-end developer · Open to roles
-    </span>
+    <div>
+        <span class="status"
+          data-en="Front-end developer · Open to opportunities"
+          data-ar="مطور واجهات أمامية · متاح للفرص المهنية">
+          Front-end developer · Open to opportunities
+        </span>
 
-    <h1>Awab Abdelgadir</h1>
+        <h1>Awab Abdelgadir</h1>
 
-   <div class="arabic-name">أواب عبد القادر</div>
+        <div class="arabic-name">أواب عبد القادر</div>
 
-    <h2 data-en="I build the front of web products."
-        data-ar="أطور واجهات المواقع والتطبيقات.">
-      I build the front of web products.
-    </h2>
+        <h2
+          data-en="I build the front of web products."
+          data-ar="أطور واجهات المواقع والتطبيقات.">
+          I build the front of web products.
+        </h2>
 
-    <p data-en="Clear pages, responsive layout, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree at Bilgi University, and work you can open."
-       data-ar="أصمم وأطور واجهات ويب واضحة ومتجاوبة. لدي خبرة من خلال ثلاثة تدريبات عملية في إسطنبول، وشهادة في نظم المعلومات الإدارية من جامعة إسطنبول بلجي.">
-      Clear pages, responsive layout, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree at Bilgi University, and work you can open.
-    </p>
+        <p
+          data-en="Clear pages, responsive layouts, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree from Istanbul Bilgi University, and practical web development experience."
+          data-ar="أعمل على تطوير واجهات مواقع واضحة ومتجاوبة وسهلة الاستخدام. لدي خبرة عملية من خلال ثلاثة تدريبات مهنية في إسطنبول، بالإضافة إلى شهادة في نظم المعلومات الإدارية من جامعة إسطنبول بلجي وخبرة في تطوير الويب.">
+          Clear pages, responsive layouts, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree from Istanbul Bilgi University, and practical web development experience.
+        </p>
 
-    <div class="buttons">
-      <a href="#work" class="btn" data-en="Selected work">Selected work</a>
-      <a href="#contact" class="btn secondary" data-en="Email me">Email me</a>
-    </div>
-  </div>
+        <div class="buttons">
+            <a href="#work" class="btn"
+               data-en="Selected work"
+               data-ar="أبرز أعمالي">Selected work</a>
 
-  <div class="profile-card">
-<div class="profile-icon">
-    <img src="link1.jpg" alt="Profile photo">
-</div>
-
-    <div class="item">
-      <small>Based</small>
-      <strong>Istanbul, Turkey</strong>
-    </div>
-
-    <div class="item">
-      <small>From</small>
-      <strong>Born in Saudi Arabia</strong>
+            <a href="#contact" class="btn secondary"
+               data-en="Contact me"
+               data-ar="تواصل معي">Contact me</a>
+        </div>
     </div>
 
-    <div class="item">
-      <small>Languages</small>
-      <strong>Arabic · English</strong>
-    </div>
+    <div class="profile-card">
 
-    <div class="item">
-      <small>Education</small>
-      <strong>Bilgi University, MIS Graduate</strong>
+        <div class="profile-icon">
+            <img src="./link1.jpg">
+        </div>
+
+        <div class="item">
+            <small data-en="Based" data-ar="مكان الإقامة">Based</small>
+            <strong data-en="Istanbul, Turkey" data-ar="إسطنبول، تركيا">Istanbul, Turkey</strong>
+        </div>
+
+        <div class="item">
+            <small data-en="From" data-ar="مكان الميلاد">From</small>
+            <strong data-en="Born in Saudi Arabia" data-ar="وُلدت في المملكة العربية السعودية">Born in Saudi Arabia</strong>
+        </div>
+
+        <div class="item">
+            <small data-en="Languages" data-ar="اللغات">Languages</small>
+            <strong data-en="Arabic · English" data-ar="العربية · الإنجليزية">Arabic · English</strong>
+        </div>
+
+        <div class="item">
+            <small data-en="Education" data-ar="التعليم">Education</small>
+            <strong data-en="Istanbul Bilgi University · MIS Graduate"
+                    data-ar="جامعة إسطنبول بلجي · خريج نظم المعلومات الإدارية">
+                Istanbul Bilgi University · MIS Graduate
+            </strong>
+        </div>
+
     </div>
-  </div>
 
 </div>
 </section>
+
+<!-- WORK -->
 
 <section id="work">
 <div class="container">
 
-  <div class="section-label">Portfolio</div>
-  <h2 class="section-title" data-en="Selected work" data-ar="أبرز أعمالي">Selected work</h2>
+    <div class="section-label"
+         data-en="Portfolio"
+         data-ar="معرض الأعمال">Portfolio</div>
 
-  <p class="section-description"
-     data-en="Four pieces you can open. Internship builds are HTML, CSS, and JavaScript. React and Next.js are in active practice, not claimed on work that did not use them."
-    Four pieces you can open. Internship builds are HTML, CSS, and JavaScript. React and Next.js are in active practice, not claimed on work that did not use them.
-  </p>
+    <h2 class="section-title"
+        data-en="Selected work"
+        data-ar="أبرز أعمالي">Selected work</h2>
 
-  <div class="filters">
-    <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
-    <button class="filter-btn" onclick="filterProjects('internship',this)">Internships</button>
-    <button class="filter-btn" onclick="filterProjects('university',this)">University</button>
-  </div>
+    <p class="section-description"
+       data-en="A selection of projects from my internships and university experience. These projects reflect my practical experience in front-end development and web technologies."
+       data-ar="مجموعة من المشاريع التي عملت عليها خلال التدريبات المهنية والدراسة الجامعية. تعكس هذه المشاريع خبرتي العملية في تطوير واجهات المواقع وتقنيات الويب.">
+       A selection of projects from my internships and university experience. These projects reflect my practical experience in front-end development and web technologies.
+    </p>
 
-  <div class="projects">
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all"
+                onclick="filterProjects('all',this)"
+                data-en="All projects" data-ar="جميع المشاريع">All projects</button>
 
-    <article class="project" data-category="internship">
-      <span class="project-number">01</span>
-      <h3>MenuLux</h3>
-      <p>NDM Software · Istanbul</p>
-      <p>Restaurant product development and front-end implementation.</p>
-      <div class="tags">HTML · CSS · JavaScript · 2025–26</div>
-      <a href="https://menulux.com/" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
-    </article>
+        <button class="filter-btn" data-filter="internship"
+                onclick="filterProjects('internship',this)"
+                data-en="Internships" data-ar="مشاريع التدريب">Internships</button>
 
-    <article class="project" data-category="internship">
-      <span class="project-number">02</span>
-      <h3>SharafDG</h3>
-      <p>Scramble Bit · Istanbul</p>
-      <p>Front-end prototype for an electronics e-commerce website.</p>
-      <div class="tags">HTML · CSS · JavaScript · 2024</div>
-      <a href="https://github.com/awabismailelazhariomerabdelgadir/SharafDG" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
-    </article>
+        <button class="filter-btn" data-filter="university"
+                onclick="filterProjects('university',this)"
+                data-en="University" data-ar="مشاريع جامعية">University</button>
+    </div>
 
-    <article class="project" data-category="internship">
-      <span class="project-number">03</span>
-      <h3>Koru Impact</h3>
-      <p>Koru Impact · Istanbul</p>
-      <p>Website design and front-end development for a consulting firm.</p>
-      <div class="tags">HTML · CSS · JavaScript · 2025</div>
-      <a href="https://github.com/awabismailelazhariomerabdelgadir/koru_impact" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
-    </article>
+    <div class="projects">
 
-    <article class="project" data-category="university">
-      <span class="project-number">04</span>
-      <h3>Learnofy</h3>
-      <p>Graduation project · Bilgi University</p>
-      <p>A team project focused on supporting university students and connecting them with local cafes.</p>
-      <div class="tags">Team project · Web · 2025–26</div>
-      <a href="https://learnofy.net/landingpage" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
-    </article>
+        <article class="project" data-category="internship">
+            <span class="project-number">01</span>
+            <h3>MenuLux</h3>
 
-  </div>
+            <p data-en="NDM Software · Istanbul"
+               data-ar="شركة NDM Software · إسطنبول">
+               NDM Software · Istanbul
+            </p>
+
+            <p data-en="Restaurant product development and front-end implementation."
+               data-ar="المساهمة في تطوير واجهات منتج رقمي مخصص للمطاعم.">
+               Restaurant product development and front-end implementation.
+            </p>
+
+            <div class="tags">HTML · CSS · JavaScript · 2025–2026</div>
+
+            <a href="https://menulux.com/" target="_blank"
+               rel="noopener noreferrer"
+               class="btn secondary"
+               style="margin-top:18px"
+               data-en="Visit website ↗"
+               data-ar="زيارة الموقع ↗">Visit website ↗</a>
+        </article>
+
+        <article class="project" data-category="internship">
+            <span class="project-number">02</span>
+            <h3>SharafDG</h3>
+
+            <p data-en="Scramble Bit · Istanbul"
+               data-ar="شركة Scramble Bit · إسطنبول">
+               Scramble Bit · Istanbul
+            </p>
+
+            <p data-en="Front-end prototype for an electronics e-commerce website."
+               data-ar="تطوير نموذج أولي لواجهة متجر إلكتروني متخصص في الأجهزة والإلكترونيات.">
+               Front-end prototype for an electronics e-commerce website.
+            </p>
+
+            <div class="tags">HTML · CSS · JavaScript · 2024</div>
+
+            <a href="https://github.com/awabismailelazhariomerabdelgadir/SharafDG"
+               target="_blank" rel="noopener noreferrer"
+               class="btn secondary"
+               style="margin-top:18px"
+               data-en="View project ↗"
+               data-ar="عرض المشروع ↗">View project ↗</a>
+        </article>
+
+        <article class="project" data-category="internship">
+            <span class="project-number">03</span>
+            <h3>Koru Impact</h3>
+
+            <p data-en="Koru Impact · Istanbul"
+               data-ar="شركة Koru Impact · إسطنبول">
+               Koru Impact · Istanbul
+            </p>
+
+            <p data-en="Website design and front-end development for a consulting firm."
+               data-ar="المساهمة في تصميم وتطوير واجهة موقع إلكتروني لشركة استشارات.">
+               Website design and front-end development for a consulting firm.
+            </p>
+
+            <div class="tags">HTML · CSS · JavaScript · 2025</div>
+
+            <a href="https://github.com/awabismailelazhariomerabdelgadir/koru_impact"
+               target="_blank" rel="noopener noreferrer"
+               class="btn secondary"
+               style="margin-top:18px"
+               data-en="View project ↗"
+               data-ar="عرض المشروع ↗">View project ↗</a>
+        </article>
+
+        <article class="project" data-category="university">
+            <span class="project-number">04</span>
+            <h3>Learnofy</h3>
+
+            <p data-en="Graduation project · Istanbul Bilgi University"
+               data-ar="مشروع التخرج · جامعة إسطنبول بلجي">
+               Graduation project · Istanbul Bilgi University
+            </p>
+
+            <p data-en="A team project focused on supporting university students and connecting them with local cafes."
+               data-ar="مشروع جماعي يهدف إلى دعم طلاب الجامعات وربطهم بالمقاهي المحلية من خلال منصة رقمية.">
+               A team project focused on supporting university students and connecting them with local cafes.
+            </p>
+
+            <div class="tags">Team project · Web · 2025–2026</div>
+
+            <a href="https://learnofy.net/landingpage"
+               target="_blank" rel="noopener noreferrer"
+               class="btn secondary"
+               style="margin-top:18px"
+               data-en="View project ↗"
+               data-ar="عرض المشروع ↗">View project ↗</a>
+        </article>
+
+    </div>
 </div>
 </section>
+
+<!-- EXPERIENCE -->
 
 <section id="experience">
 <div class="container">
 
-  <div class="section-label">Career</div>
-  <h2 class="section-title">Experience</h2>
+    <div class="section-label"
+         data-en="Career"
+         data-ar="المسيرة المهنية">Career</div>
 
-  <p class="section-description">
-    Short, on-site internships. Each one shipped a site that is still online.
-  </p>
+    <h2 class="section-title"
+        data-en="Experience"
+        data-ar="الخبرات العملية">Experience</h2>
 
-  <div class="experience-list">
+    <p class="section-description"
+       data-en="My professional experience includes three internships in Istanbul, where I gained practical exposure to web development and website projects."
+       data-ar="تشمل خبرتي المهنية ثلاثة تدريبات عملية في إسطنبول، اكتسبت خلالها خبرة في تطوير الويب والعمل على مشاريع المواقع الإلكترونية.">
+       My professional experience includes three internships in Istanbul, where I gained practical exposure to web development and website projects.
+    </p>
 
-    <article class="experience-item">
-      <span class="date">Oct 2025 — Feb 2026</span>
-      <h3>Web & Application Development Intern</h3>
-      <h4>NDM Software · Istanbul</h4>
-      <p>MenuLux restaurant product. Requirements, interface, and a stable front-end.</p>
-    </article>
+    <div class="experience-list">
 
-    <article class="experience-item">
-      <span class="date">Jul 2025 — Aug 2025</span>
-      <h3>Website Design Assistant</h3>
-      <h4>Koru Impact · Istanbul</h4>
-      <p>Consulting-firm website. Navigation and a clearer client-facing layout.</p>
-    </article>
+        <article class="experience-item">
+            <span class="date">Oct 2025 — Feb 2026</span>
 
-    <article class="experience-item">
-      <span class="date">Aug 2024 — Oct 2024</span>
-      <h3>Web Developer Intern</h3>
-      <h4>Scramble Bit · Istanbul</h4>
-      <p>SharafDG electronics prototype. Front-end components and page structure.</p>
-    </article>
+            <h3 data-en="Web & Application Development Intern"
+                data-ar="متدرب في تطوير الويب والتطبيقات">
+                Web & Application Development Intern
+            </h3>
 
-  </div>
+            <h4>NDM Software · Istanbul</h4>
+
+            <p data-en="Worked on the MenuLux restaurant product, gaining experience in requirements, interfaces, and front-end development."
+               data-ar="العمل على منتج MenuLux المخصص للمطاعم، واكتساب خبرة في فهم المتطلبات وتطوير الواجهات الأمامية.">
+               Worked on the MenuLux restaurant product, gaining experience in requirements, interfaces, and front-end development.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <span class="date">Jul 2025 — Aug 2025</span>
+
+            <h3 data-en="Website Design Assistant"
+                data-ar="مساعد في تصميم المواقع الإلكترونية">
+                Website Design Assistant
+            </h3>
+
+            <h4>Koru Impact · Istanbul</h4>
+
+            <p data-en="Contributed to a consulting-firm website, focusing on navigation, layout, and the client-facing interface."
+               data-ar="المساهمة في تطوير موقع شركة استشارات، مع التركيز على تنظيم الصفحات وسهولة التنقل وتجربة المستخدم.">
+               Contributed to a consulting-firm website, focusing on navigation, layout, and the client-facing interface.
+            </p>
+        </article>
+
+        <article class="experience-item">
+            <span class="date">Aug 2024 — Oct 2024</span>
+
+            <h3 data-en="Web Developer Intern"
+                data-ar="متدرب في تطوير الويب">
+                Web Developer Intern
+            </h3>
+
+            <h4>Scramble Bit · Istanbul</h4>
+
+            <p data-en="Worked on the SharafDG electronics website prototype, contributing to front-end components and page structure."
+               data-ar="العمل على النموذج الأولي لموقع SharafDG المتخصص في الإلكترونيات، والمساهمة في تطوير مكونات الواجهة وهيكل الصفحات.">
+               Worked on the SharafDG electronics website prototype, contributing to front-end components and page structure.
+            </p>
+        </article>
+
+    </div>
 </div>
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
 <div class="container">
 
-  <div class="section-label">About me</div>
-  <h2 class="section-title">About</h2>
+    <div class="section-label"
+         data-en="About me"
+         data-ar="نبذة عني">About me</div>
 
-  <div class="about-card">
-    <p>
-      I am a Sudanese front-end developer living in Istanbul, born in Saudi Arabia, and a graduate of Management Information Systems from Istanbul Bilgi University. I studied in English and have practical experience in web development. I am currently seeking opportunities to apply my technical and management skills, contribute to meaningful projects, and continue growing as a developer.
-    </p>
-  </div>
+    <h2 class="section-title"
+        data-en="A little about me"
+        data-ar="من أنا؟">A little about me</h2>
 
-  <h2 class="section-title" style="margin-top:55px">Skills</h2>
+    <div class="about-card">
 
-  <div class="skills-grid">
+        <p
+          data-en="I am a Sudanese front-end developer living in Istanbul, born in Saudi Arabia, and a graduate of Management Information Systems from Istanbul Bilgi University. I studied in English and have practical experience in web development. I am currently seeking opportunities to apply my technical and management skills, contribute to meaningful projects, and continue growing as a developer."
+          data-ar="أنا مطور واجهات أمامية سوداني أعيش في إسطنبول، وُلدت في المملكة العربية السعودية، وخريج تخصص نظم المعلومات الإدارية من جامعة إسطنبول بلجي. درست باللغة الإنجليزية ولدي خبرة عملية في تطوير الويب. أسعى حاليًا إلى الحصول على فرص مهنية أستطيع من خلالها توظيف مهاراتي التقنية والإدارية، والمساهمة في مشاريع ذات قيمة، ومواصلة التطور والنمو في مجال تطوير البرمجيات.">
+        I am a Sudanese front-end developer living in Istanbul, born in Saudi Arabia, and a graduate of Management Information Systems from Istanbul Bilgi University. I studied in English and have practical experience in web development. I am currently seeking opportunities to apply my technical and management skills, contribute to meaningful projects, and continue growing as a developer.
+        </p>
 
-    <div class="skill-card">
-      <h3>Interface</h3>
-      <p>HTML5 · CSS3 · JavaScript · React.js · Next.js · Responsive layout</p>
     </div>
 
-    <div class="skill-card">
-      <h3>Practice</h3>
-      <p>Git · GitHub · VS Code · UI fundamentals · Agile</p>
+    <h2 class="section-title"
+        style="margin-top:55px"
+        data-en="Skills"
+        data-ar="المهارات">Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3 data-en="Front-end Development"
+                data-ar="تطوير الواجهات الأمامية">
+                Front-end Development
+            </h3>
+
+            <p>HTML5 · CSS3 · JavaScript · React.js · Next.js · Responsive Design</p>
+        </div>
+
+        <div class="skill-card">
+            <h3 data-en="Tools & Workflow"
+                data-ar="الأدوات وبيئة العمل">
+                Tools & Workflow
+            </h3>
+
+            <p>Git · GitHub · VS Code · UI Fundamentals · Agile</p>
+        </div>
+
+        <div class="skill-card">
+            <h3 data-en="Additional Skills"
+                data-ar="مهارات إضافية">
+                Additional Skills
+            </h3>
+
+            <p>Python · SQL · Excel · Power BI</p>
+        </div>
+
     </div>
 
-    <div class="skill-card">
-      <h3>Also</h3>
-      <p>Python · SQL · Excel · Power BI</p>
-    </div>
+    <h2 class="section-title"
+        style="margin-top:55px"
+        data-en="Education"
+        data-ar="التعليم">Education</h2>
 
-  </div>
+    <div class="about-card">
+        <h3>Istanbul Bilgi University</h3>
+
+        <p data-en="Bachelor's Degree in Management Information Systems. Graduated in July 2026. Studied in English."
+           data-ar="درجة البكالوريوس في تخصص نظم المعلومات الإدارية. تخرجت في يوليو 2026. كانت لغة الدراسة الإنجليزية.">
+           Bachelor's Degree in Management Information Systems. Graduated in July 2026. Studied in English.
+        </p>
+    </div>
 
 </div>
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
 <div class="container">
 
-  <div class="section-label">Get in touch</div>
-  <h2 class="section-title">Contact</h2>
+    <div class="section-label"
+         data-en="Get in touch"
+         data-ar="تواصل معي">Get in touch</div>
 
-  <p class="section-description">
-    A short note is enough. I read every message.
-  </p>
+    <h2 class="section-title"
+        data-en="Let's connect"
+        data-ar="لنتواصل معًا">Let's connect</h2>
 
-  <div class="contact-grid">
+    <p class="section-description"
+       data-en="Interested in working together or discussing an opportunity? Feel free to get in touch."
+       data-ar="هل ترغب في مناقشة فرصة عمل أو التعاون في مشروع؟ يسعدني التواصل معك.">
+       Interested in working together or discussing an opportunity? Feel free to get in touch.
+    </p>
 
-    <div class="contact-info">
-      <p>Email: <a href="mailto:awabobeismail@gmail.com">awabobeismail@gmail.com</a></p>
+    <div class="contact-grid">
 
-      <p>Phone: +90 535 779 4710</p>
+        <div class="contact-info">
 
-      <p>GitHub:
-        <a href="https://github.com/awabismailelazhariomerabdelgadir" target="_blank">
-          GitHub Profile ↗
-        </a>
-      </p>
+            <p>
+                <strong data-en="Email:" data-ar="البريد الإلكتروني:">Email:</strong>
+                <a href="mailto:awabbobeismail@gmail.com">
+                    awabbobeismail@gmail.com
+                </a>
+            </p>
 
-      <p>CV:
-        <a href="/Awab-Abdelgadir-CV.pdf" target="_blank">
-          Download CV ↗
-        </a>
-      </p>
+            <p>
+                <strong data-en="Phone:" data-ar="الهاتف:">Phone:</strong>
+                <a href="tel:+905357794710">+90 535 779 4710</a>
+            </p>
+
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/awabismailelazhariomerabdelgadir"
+                   target="_blank" rel="noopener noreferrer">
+                   GitHub Profile ↗
+                </a>
+            </p>
+
+            <p>
+                <strong data-en="CV:" data-ar="السيرة الذاتية:">CV:</strong>
+                <a href="/Awab-Abdelgadir-CV.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-en="View CV ↗"
+                   data-ar="عرض السيرة الذاتية ↗">
+                   View CV ↗
+                </a>
+            </p>
+
+        </div>
+
+        <form class="contact-form" onsubmit="sendEmail(event)">
+
+            <input
+                type="text"
+                id="name"
+                required
+                placeholder="Your name"
+                data-en-placeholder="Your name"
+                data-ar-placeholder="اسمك">
+
+            <input
+                type="email"
+                id="email"
+                required
+                placeholder="Your email"
+                data-en-placeholder="Your email"
+                data-ar-placeholder="بريدك الإلكتروني">
+
+            <textarea
+                id="message"
+                required
+                placeholder="Your message"
+                data-en-placeholder="Your message"
+                data-ar-placeholder="اكتب رسالتك هنا"></textarea>
+
+            <button
+                type="submit"
+                class="btn"
+                data-en="Send message"
+                data-ar="إرسال الرسالة">
+                Send message
+            </button>
+
+        </form>
+
     </div>
-
-    <form class="contact-form" onsubmit="sendEmail(event)">
-      <input type="text" id="name" placeholder="Your name" required>
-      <textarea id="message" placeholder="Your message" required></textarea>
-      <button type="submit" class="btn">Open email</button>
-    </form>
-
-  </div>
 </div>
 </section>
 
 </main>
 
 <footer>
-  Awab Abdelgadir · Istanbul
-  <br>
-  MIS Graduate · Istanbul Bilgi University
+    <p data-en="Awab Abdelgadir · Istanbul · MIS Graduate · Istanbul Bilgi University"
+       data-ar="أواب عبد القادر · إسطنبول · خريج نظم المعلومات الإدارية · جامعة إسطنبول بلجي">
+       Awab Abdelgadir · Istanbul · MIS Graduate · Istanbul Bilgi University
+    </p>
+    <p style="margin-top:8px">© <span id="year"></span> Awab Abdelgadir</p>
 </footer>
 
 <script>
-function filterProjects(category, button) {
-  document.querySelectorAll('.filter-btn').forEach(btn =>
-    btn.classList.remove('active')
-  );
 
-  button.classList.add('active');
-
-  document.querySelectorAll('.project').forEach(project => {
-    project.style.display =
-      category === 'all' || project.dataset.category === category
-      ? 'block'
-      : 'none';
-  });
-}
-
-function sendEmail(event) {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
-
-  const subject = encodeURIComponent("Portfolio contact from " + name);
-  const body = encodeURIComponent(message);
-
-  window.location.href =
-    "mailto:awabbobeismail@gmail.com?subject=" +
-    subject + "&body=" + body;
-}
+/* LANGUAGE SWITCHING */
 
 function setLanguage(language) {
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
 
-  document.querySelectorAll('[data-en]').forEach(element => {
-    element.textContent =
-      element.getAttribute('data-' + language);
-  });
+    const isArabic = language === 'ar';
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-en][data-ar]').forEach(element => {
+        const translation = element.getAttribute(
+            isArabic ? 'data-ar' : 'data-en'
+        );
+
+        if (translation !== null) {
+            element.textContent = translation;
+        }
+    });
+
+    document.querySelectorAll(
+        '[data-en-placeholder][data-ar-placeholder]'
+    ).forEach(element => {
+        element.placeholder = element.getAttribute(
+            isArabic ? 'data-ar-placeholder' : 'data-en-placeholder'
+        );
+    });
+
+    document.querySelectorAll('.lang-switch button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    const activeButton = document.querySelector(
+        isArabic
+            ? '.lang-switch button[onclick*="ar"]'
+            : '.lang-switch button[onclick*="en"]'
+    );
+
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    // Translate currently selected project filter
+    const selectedFilter = document.querySelector('.filter-btn.active');
+
+    if (selectedFilter) {
+        const category = selectedFilter.dataset.filter;
+        const translations = {
+            all: ['All projects', 'جميع المشاريع'],
+            internship: ['Internships', 'مشاريع التدريب'],
+            university: ['University', 'مشاريع جامعية']
+        };
+
+        selectedFilter.textContent = translations[category][isArabic ? 1 : 0];
+    }
 }
+
+/* PROJECT FILTERING */
+
+function filterProjects(category, button) {
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    document.querySelectorAll('.project').forEach(project => {
+        const visible =
+            category === 'all' ||
+            project.dataset.category === category;
+
+        project.style.display = visible ? 'block' : 'none';
+    });
+
+    const isArabic = document.documentElement.lang === 'ar';
+
+    const translations = {
+        all: ['All projects', 'جميع المشاريع'],
+        internship: ['Internships', 'مشاريع التدريب'],
+        university: ['University', 'مشاريع جامعية']
+    };
+
+    button.textContent = translations[category][isArabic ? 1 : 0];
+}
+
+/* CONTACT FORM */
+
+function sendEmail(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const isArabic = document.documentElement.lang === 'ar';
+
+    const subject = encodeURIComponent(
+        isArabic
+            ? 'رسالة من الموقع الشخصي'
+            : 'Portfolio contact from ' + name
+    );
+
+    const body = encodeURIComponent(
+        (isArabic ? 'الاسم: ' : 'Name: ') + name +
+        '\n' +
+        (isArabic ? 'البريد الإلكتروني: ' : 'Email: ') + email +
+        '\n\n' +
+        (isArabic ? 'الرسالة: ' : 'Message: ') + message
+    );
+
+    window.location.href =
+        'mailto:awabbobeismail@gmail.com?subject=' +
+        subject + '&body=' + body;
+}
+
+/* CURRENT YEAR */
+
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+
 </script>
 
 </body>
