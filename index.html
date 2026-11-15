@@ -1,270 +1,780 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awab Abdelgadir — Front-End Web Developer</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3b82f6',
-                        darkBg: '#0b0f19',
-                        cardBg: '#111827'
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Awab Abdelgadir - Front-End Developer and Management Information Systems graduate.">
+<title>Awab Abdelgadir | Front-End Developer</title>
+
+<style>
+:root {
+  --bg: #080d18;
+  --surface: #101a2c;
+  --surface2: #152239;
+  --text: #edf3ff;
+  --muted: #9baac0;
+  --accent: #67e8c0;
+  --border: rgba(255,255,255,.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,13,24,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.lang-switch button:hover {
+  background: var(--surface2);
+}
+
+section {
+  padding: 85px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero {
+  padding: 100px 0 85px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr .8fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.status {
+  display: inline-block;
+  color: var(--accent);
+  background: rgba(103,232,192,.09);
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 66px);
+  line-height: 1.12;
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+}
+
+.arabic-name {
+  color: var(--muted);
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+.hero h2 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  background: var(--accent);
+  color: #08151a;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.secondary {
+  color: var(--text);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+}
+
+.profile-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 2px solid var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  color: var(--accent);
+  margin-bottom: 25px;
+}
+
+.profile-card .item {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-card .item:last-child {
+  border: none;
+}
+
+.profile-card small {
+  color: var(--muted);
+  display: block;
+}
+
+.profile-card strong {
+  font-size: 15px;
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  color: var(--muted);
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  padding: 9px 17px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #08151a;
+  border-color: var(--accent);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 25px;
+  transition: .25s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.project-number {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.project h3 {
+  font-size: 23px;
+  margin: 8px 0;
+}
+
+.project p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tags {
+  margin-top: 18px;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.experience-list {
+  border-left: 2px solid var(--accent);
+  margin-left: 8px;
+}
+
+.experience-item {
+  padding: 0 0 35px 25px;
+  position: relative;
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.date {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.experience-item h3 {
+  font-size: 21px;
+  margin: 6px 0;
+}
+
+.experience-item h4 {
+  color: var(--muted);
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.experience-item p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 35px;
+  border-radius: 18px;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 850px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.skill-card {
+  padding: 22px;
+  border-radius: 13px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.skill-card h3 {
+  color: var(--accent);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.contact-info {
+  color: var(--muted);
+}
+
+.contact-info p {
+  margin: 13px 0;
+}
+
+.contact-info a {
+  color: var(--accent);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 14px;
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+footer {
+  padding: 30px 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .experience-list {
+  border-left: none;
+  border-right: 2px solid var(--accent);
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+[dir="rtl"] .experience-item {
+  padding: 0 25px 35px 0;
+}
+
+[dir="rtl"] .experience-item::before {
+  left: auto;
+  right: -7px;
+}
+
+@media(max-width: 750px) {
+  .hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
+</style>
 </head>
-<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                Awab<span class="text-primary">.dev</span>
-            </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#experience" class="hover:text-primary transition">Experience</a>
-                <a href="#projects" class="hover:text-primary transition">Projects</a>
-                <a href="#skills" class="hover:text-primary transition">Skills</a>
-                <a href="#contact" class="hover:text-primary transition">Contact</a>
-            </nav>
-            <a href="#contact" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-lg shadow-primary/20">Let's Talk</a>
-        </div>
-    </header>
+<body>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center pt-24 pb-16 px-6 relative overflow-hidden">
-        <!-- Glow Effects -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Awab.</a>
 
-        <div class="max-w-4xl mx-auto text-center z-10 flex flex-col items-center">
-            <!-- Profile Picture -->
-            <div class="relative w-36 h-36 sm:w-44 sm:h-44 mb-8 rounded-full p-1 bg-gradient-to-tr from-primary to-indigo-500 shadow-2xl shadow-primary/30">
-                <!-- Replace 'profile.jpg' with your actual image filename in your repository -->
-                <img src="profile.jpg" alt="Awab Abdelgadir" class="w-full h-full object-cover rounded-full bg-slate-800" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
-            </div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-            <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 border border-primary/20">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> MIS Graduate & Front-End Developer[cite: 1]
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-primary">Awab Abdelgadir</span>[cite: 1]
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Management Information Systems graduate from Istanbul Bilgi University with three front-end internships in Istanbul[cite: 1]. Building clean, responsive web pages and digital interfaces.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-                <a href="#experience" class="w-full sm:w-auto bg-primary hover:bg-blue-600 text-white font-medium px-8 py-3.5 rounded-xl transition shadow-lg shadow-primary/25">
-                    View Experience
-                </a>
-                <a href="#contact" class="w-full sm:w-auto bg-cardBg hover:bg-slate-800 text-slate-200 font-medium px-8 py-3.5 rounded-xl border border-slate-800 transition">
-                    Get in Touch
-                </a>
-            </div>
-        </div>
-    </section>
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('ar')">ع</button>
+      </div>
+    </nav>
+  </div>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">Professional Summary</h2>
-            <div class="bg-cardBg p-8 sm:p-10 rounded-2xl border border-slate-800 shadow-xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-                <p class="text-slate-300 text-lg leading-relaxed mb-8 relative z-10">
-                    Management Information Systems graduate from Istanbul Bilgi University with three front-end internships in Istanbul[cite: 1]. I build responsive pages and small web interfaces with HTML, CSS, and JavaScript, and I am practicing React.js and Next.js on my own[cite: 1]. Most of my work so far has been turning a short brief into a working screen the team could open and review[cite: 1].
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800/80 text-center sm:text-left relative z-10">
-                    <div>
-                        <span class="block text-slate-400 text-xs uppercase tracking-wider mb-1">Location</span>
-                        <span class="text-white font-semibold">Istanbul, Turkey[cite: 1]</span>
-                    </div>
-                    <div>
-                        <span class="block text-slate-400 text-xs uppercase tracking-wider mb-1">Education</span>
-                        <span class="text-white font-semibold">B.Sc. MIS, Bilgi Univ.[cite: 1]</span>
-                    </div>
-                    <div>
-                        <span class="block text-slate-400 text-xs uppercase tracking-wider mb-1">Languages</span>
-                        <span class="text-white font-semibold">Arabic, English (Fluent)[cite: 1]</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-4 text-center">Work Experience</h2>
-            <p class="text-slate-400 text-center mb-12">Practical internship background building real-world interfaces in Istanbul[cite: 1].</p>
+<section class="hero" id="home">
+<div class="container hero-grid">
 
-            <div class="space-y-8">
-                <!-- NDM Software -->
-                <div class="bg-cardBg p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Web & Application Development Intern</h3>
-                            <span class="text-primary font-medium text-sm">NDM Software, Istanbul</span>[cite: 1]
-                        </div>
-                        <span class="text-xs text-slate-400 mt-2 sm:mt-0 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800 w-fit">October 2025 - February 2026[cite: 1]</span>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4"><strong class="text-slate-300">Tools:</strong> HTML, CSS, JavaScript, Git[cite: 1]</p>
-                    <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mb-6 leading-relaxed">
-                        <li>Built front-end screens for MenuLux, a restaurant web app, covering orders, tables, and a kitchen view from the team's requirements[cite: 1].</li>
-                        <li>Made the main pages responsive so the same layout stayed usable on a laptop and a smaller screen[cite: 1].</li>
-                        <li>Kept the HTML, CSS, and JavaScript in separate files, which made later edits to the menu and order screens easier[cite: 1].</li>
-                    </ul>
-                    <a href="https://awabismailelazhariomerabdelgadir.github.io/MenuluxEn" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg border border-primary/20 hover:bg-primary/20 transition">
-                        <i class="fas fa-external-link-alt"></i> Live Demo: MenuluxEn[cite: 1]
-                    </a>
-                </div>
+  <div>
+    <span class="status" data-en="Front-end developer · Open to roles"
+      data-ar="مطور واجهات أمامية · متاح للفرص">
+      Front-end developer · Open to roles
+    </span>
 
-                <!-- Koru Impact -->
-                <div class="bg-cardBg p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Website Design Assistant</h3>
-                            <span class="text-primary font-medium text-sm">Koru Impact, Istanbul</span>[cite: 1]
-                        </div>
-                        <span class="text-xs text-slate-400 mt-2 sm:mt-0 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800 w-fit">July 2025 - August 2025[cite: 1]</span>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4"><strong class="text-slate-300">Tools:</strong> HTML, CSS, JavaScript[cite: 1]</p>
-                    <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mb-6 leading-relaxed">
-                        <li>Helped design and build a multi-page site for a consulting firm, with the home page, services, and contact reachable from the same navigation[cite: 1].</li>
-                        <li>Adjusted spacing and headings so a visitor could find the main sections without extra clicks[cite: 1].</li>
-                    </ul>
-                    <a href="https://awabismailelazhariomerabdelgadir.github.io/koru_impact" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg border border-primary/20 hover:bg-primary/20 transition">
-                        <i class="fas fa-external-link-alt"></i> Live Demo: koru_impact[cite: 1]
-                    </a>
-                </div>
+    <h1>Awab Abdelgadir</h1>
 
-                <!-- Scramble Bit -->
-                <div class="bg-cardBg p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Web Developer Intern</h3>
-                            <span class="text-primary font-medium text-sm">Scramble Bit, Istanbul</span>[cite: 1]
-                        </div>
-                        <span class="text-xs text-slate-400 mt-2 sm:mt-0 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800 w-fit">August 2024 - October 2024[cite: 1]</span>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-4"><strong class="text-slate-300">Tools:</strong> HTML, CSS, JavaScript[cite: 1]</p>
-                    <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mb-6 leading-relaxed">
-                        <li>Built the front-end of a SharafDG e-commerce prototype, including a product listing and a sign-in page[cite: 1].</li>
-                        <li>Structured the product pages so names, prices, and images stayed readable when the window was narrowed[cite: 1].</li>
-                    </ul>
-                    <a href="https://awabismailelazhariomerabdelgadir.github.io/SharafDG" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg border border-primary/20 hover:bg-primary/20 transition">
-                        <i class="fas fa-external-link-alt"></i> Live Demo: SharafDG[cite: 1]
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="arabic-name">أواب عبد القادر</div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-4 text-center">Featured Projects</h2>
-            <p class="text-slate-400 text-center mb-12">Graduation and academic projects.</p>
-            
-            <div class="bg-cardBg p-8 rounded-2xl border border-slate-800 shadow-xl">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">LEARNOFY Platform</h3>
-                        <span class="text-primary font-medium text-sm">Graduation Project, Istanbul Bilgi University</span>[cite: 1]
-                    </div>
-                    <span class="text-xs text-slate-400 mt-2 sm:mt-0 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800 w-fit">October 2025 - June 2026[cite: 1]</span>
-                </div>
-                <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                    Team project: a small platform to help university students through their studies and let nearby cafes share student promotions[cite: 1].
-                </p>
-                <a href="https://learnofy.net/landingpage" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 px-3.5 py-2 rounded-lg border border-primary/20 hover:bg-primary/20 transition">
-                    <i class="fas fa-external-link-alt"></i> Live: learnofy.net/landingpage[cite: 1]
-                </a>
-            </div>
-        </div>
-    </section>
+    <h2 data-en="I build the front of web products."
+        data-ar="أطور واجهات المواقع والتطبيقات.">
+      I build the front of web products.
+    </h2>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">Skills & Competencies</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Front-End -->
-                <div class="bg-cardBg p-6 rounded-2xl border border-slate-800">
-                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2 text-primary">
-                        <i class="fas fa-code"></i> Front-End
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">HTML5[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">CSS3[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">JavaScript (ES6+)[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">React.js[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Next.js[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Responsive Design[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">CSS Grid & Flexbox[cite: 1]</span>
-                    </div>
-                </div>
-                <!-- Tools -->
-                <div class="bg-cardBg p-6 rounded-2xl border border-slate-800">
-                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2 text-primary">
-                        <i class="fas fa-tools"></i> Tools
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Git[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">GitHub[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Visual Studio Code[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Browser DevTools[cite: 1]</span>
-                    </div>
-                </div>
-                <!-- Other -->
-                <div class="bg-cardBg p-6 rounded-2xl border border-slate-800">
-                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2 text-primary">
-                        <i class="fas fa-layer-group"></i> Other Skills
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">UI/UX fundamentals[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Agile[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Microsoft Excel[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Python[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">SQL[cite: 1]</span>
-                        <span class="bg-slate-900 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-800 font-medium">Power BI[cite: 1]</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <p data-en="Clear pages, responsive layout, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree at Bilgi University, and work you can open."
+       data-ar="أصمم وأطور واجهات ويب واضحة ومتجاوبة. لدي خبرة من خلال ثلاثة تدريبات عملية في إسطنبول، وشهادة في نظم المعلومات الإدارية من جامعة إسطنبول بلجي.">
+      Clear pages, responsive layout, and interfaces that follow the brief. Three internships in Istanbul, a Management Information Systems degree at Bilgi University, and work you can open.
+    </p>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 bg-slate-900/30 border-t border-slate-800/60">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Get in Touch</h2>
-            <p class="text-slate-400 mb-8">Looking for an entry-level front-end role, remote or in the Gulf, where the day-to-day work is in English[cite: 1].</p>
-            
-            <a href="mailto:awabobeismail@gmail.com" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-xl text-base transition shadow-xl shadow-primary/25 mb-10">
-                <i class="fas fa-envelope"></i> awabobeismail@gmail.com[cite: 1]
-            </a>
+    <div class="buttons">
+      <a href="#work" class="btn" data-en="Selected work" data-ar="أعمالي">Selected work</a>
+      <a href="#contact" class="btn secondary" data-en="Email me" data-ar="تواصل معي">Email me</a>
+    </div>
+  </div>
 
-            <div class="flex justify-center space-x-6 text-2xl text-slate-400">
-                <a href="https://github.com/awabismailelazhariomerabdelgadir" target="_blank" class="hover:text-white transition" title="GitHub"><i class="fab fa-github"></i>[cite: 1]</a>
-                <a href="tel:+905357794710" class="hover:text-primary transition" title="Phone"><i class="fas fa-phone"></i>[cite: 1]</a>
-                <a href="mailto:awabobeismail@gmail.com" class="hover:text-red-400 transition" title="Email"><i class="fas fa-envelope"></i>[cite: 1]</a>
-            </div>
-        </div>
-    </section>
+  <div class="profile-card">
+    <div class="profile-icon">A</div>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800 text-center text-sm text-slate-500">
-        <p>&copy; 2026 Awab Abdelgadir. Built with passion & code.</p>
-    </footer>
+    <div class="item">
+      <small>Based</small>
+      <strong>Istanbul, Turkey</strong>
+    </div>
+
+    <div class="item">
+      <small>From</small>
+      <strong>Born in Saudi Arabia</strong>
+    </div>
+
+    <div class="item">
+      <small>Languages</small>
+      <strong>Arabic · English</strong>
+    </div>
+
+    <div class="item">
+      <small>Education</small>
+      <strong>Bilgi University, MIS Graduate</strong>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title" data-en="Selected work" data-ar="أبرز أعمالي">Selected work</h2>
+
+  <p class="section-description"
+     data-en="Four pieces you can open. Internship builds are HTML, CSS, and JavaScript. React and Next.js are in active practice, not claimed on work that did not use them."
+     data-ar="أربعة مشاريع من أعمالي. استخدمت HTML وCSS وJavaScript في مشاريع التدريب، وأواصل تطوير مهاراتي في React وNext.js.">
+    Four pieces you can open. Internship builds are HTML, CSS, and JavaScript. React and Next.js are in active practice, not claimed on work that did not use them.
+  </p>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('internship',this)">Internships</button>
+    <button class="filter-btn" onclick="filterProjects('university',this)">University</button>
+  </div>
+
+  <div class="projects">
+
+    <article class="project" data-category="internship">
+      <span class="project-number">01</span>
+      <h3>MenuLux</h3>
+      <p>NDM Software · Istanbul</p>
+      <p>Restaurant product development and front-end implementation.</p>
+      <div class="tags">HTML · CSS · JavaScript · 2025–26</div>
+      <a href="https://menulux.com/" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
+    </article>
+
+    <article class="project" data-category="internship">
+      <span class="project-number">02</span>
+      <h3>SharafDG</h3>
+      <p>Scramble Bit · Istanbul</p>
+      <p>Front-end prototype for an electronics e-commerce website.</p>
+      <div class="tags">HTML · CSS · JavaScript · 2024</div>
+      <a href="https://github.com/awabismailelazhariomerabdelgadir/SharafDG" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
+    </article>
+
+    <article class="project" data-category="internship">
+      <span class="project-number">03</span>
+      <h3>Koru Impact</h3>
+      <p>Koru Impact · Istanbul</p>
+      <p>Website design and front-end development for a consulting firm.</p>
+      <div class="tags">HTML · CSS · JavaScript · 2025</div>
+      <a href="https://github.com/awabismailelazhariomerabdelgadir/koru_impact" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
+    </article>
+
+    <article class="project" data-category="university">
+      <span class="project-number">04</span>
+      <h3>Learnofy</h3>
+      <p>Graduation project · Bilgi University</p>
+      <p>A team project focused on supporting university students and connecting them with local cafes.</p>
+      <div class="tags">Team project · Web · 2025–26</div>
+      <a href="https://learnofy.net/landingpage" target="_blank" class="btn secondary" style="margin-top:18px">View project ↗</a>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+
+  <div class="section-label">Career</div>
+  <h2 class="section-title">Experience</h2>
+
+  <p class="section-description">
+    Short, on-site internships. Each one shipped a site that is still online.
+  </p>
+
+  <div class="experience-list">
+
+    <article class="experience-item">
+      <span class="date">Oct 2025 — Feb 2026</span>
+      <h3>Web & Application Development Intern</h3>
+      <h4>NDM Software · Istanbul</h4>
+      <p>MenuLux restaurant product. Requirements, interface, and a stable front-end.</p>
+    </article>
+
+    <article class="experience-item">
+      <span class="date">Jul 2025 — Aug 2025</span>
+      <h3>Website Design Assistant</h3>
+      <h4>Koru Impact · Istanbul</h4>
+      <p>Consulting-firm website. Navigation and a clearer client-facing layout.</p>
+    </article>
+
+    <article class="experience-item">
+      <span class="date">Aug 2024 — Oct 2024</span>
+      <h3>Web Developer Intern</h3>
+      <h4>Scramble Bit · Istanbul</h4>
+      <p>SharafDG electronics prototype. Front-end components and page structure.</p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+
+  <div class="section-label">About me</div>
+  <h2 class="section-title">About</h2>
+
+  <div class="about-card">
+    <p>
+      I am a Sudanese front-end developer living in Istanbul, born in Saudi Arabia, and a graduate of Management Information Systems from Istanbul Bilgi University. I studied in English and have practical experience in web development. I am currently seeking opportunities to apply my technical and management skills, contribute to meaningful projects, and continue growing as a developer.
+    </p>
+  </div>
+
+  <h2 class="section-title" style="margin-top:55px">Skills</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <h3>Interface</h3>
+      <p>HTML5 · CSS3 · JavaScript · React.js · Next.js · Responsive layout</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Practice</h3>
+      <p>Git · GitHub · VS Code · UI fundamentals · Agile</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Also</h3>
+      <p>Python · SQL · Excel · Power BI</p>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+  <div class="section-label">Get in touch</div>
+  <h2 class="section-title">Contact</h2>
+
+  <p class="section-description">
+    A short note is enough. I read every message.
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <p>Email: <a href="mailto:awabbobeismail@gmail.com">awabbobeismail@gmail.com</a></p>
+
+      <p>Phone: +90 535 779 4710</p>
+
+      <p>GitHub:
+        <a href="https://github.com/awabismailelazhariomerabdelgadir" target="_blank">
+          GitHub Profile ↗
+        </a>
+      </p>
+
+      <p>CV:
+        <a href="/Awab-Abdelgadir-CV.pdf" target="_blank">
+          Download CV ↗
+        </a>
+      </p>
+    </div>
+
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" id="name" placeholder="Your name" required>
+      <textarea id="message" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn">Open email</button>
+    </form>
+
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  Awab Abdelgadir · Istanbul
+  <br>
+  MIS Graduate · Istanbul Bilgi University
+</footer>
+
+<script>
+function filterProjects(category, button) {
+  document.querySelectorAll('.filter-btn').forEach(btn =>
+    btn.classList.remove('active')
+  );
+
+  button.classList.add('active');
+
+  document.querySelectorAll('.project').forEach(project => {
+    project.style.display =
+      category === 'all' || project.dataset.category === category
+      ? 'block'
+      : 'none';
+  });
+}
+
+function sendEmail(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  const subject = encodeURIComponent("Portfolio contact from " + name);
+  const body = encodeURIComponent(message);
+
+  window.location.href =
+    "mailto:awabbobeismail@gmail.com?subject=" +
+    subject + "&body=" + body;
+}
+
+function setLanguage(language) {
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-en]').forEach(element => {
+    element.textContent =
+      element.getAttribute('data-' + language);
+  });
+}
+</script>
 
 </body>
 </html>
