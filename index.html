@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awab Abdelgadir — Front-End Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight text-white">Awab<span class="text-primary">.dev</span></a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#skills" class="hover:text-primary transition">Skills</a>
+                <a href="#projects" class="hover:text-primary transition">Projects</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+            </nav>
+            <a href="#contact" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-lg shadow-primary/20">Let's Talk</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto text-center z-10">
+            <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 border border-primary/20">
+                Front-End Developer
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Awab Abdelgadir</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Building sleek, responsive, and user-centric web applications with modern front-end technologies.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto bg-primary hover:bg-blue-600 text-white font-medium px-8 py-3 rounded-xl transition shadow-lg shadow-primary/25">
+                    View Projects
+                </a>
+                <a href="#contact" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium px-8 py-3 rounded-xl border border-slate-700 transition">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">About Me</h2>
+            <div class="bg-cardBg p-8 sm:p-10 rounded-2xl border border-slate-800 shadow-xl">
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    I am a Sudanese front-end developer living in Istanbul, born in Saudi Arabia, and a graduate with a bachelor’s degree in Management Information Systems from Istanbul Bilgi University. I studied entirely in English and am currently looking for exciting entry-level front-end development opportunities.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 pt-8 border-t border-slate-800 text-center sm:text-left">
+                    <div>
+                        <span class="block text-slate-400 text-sm">Location</span>
+                        <span class="text-white font-medium">Istanbul, Turkey</span>
+                    </div>
+                    <div>
+                        <span class="block text-slate-400 text-sm">Education</span>
+                        <span class="text-white font-medium">B.Sc. MIS, Bilgi Univ.</span>
+                    </div>
+                    <div>
+                        <span class="block text-slate-400 text-sm">Status</span>
+                        <span class="text-emerald-400 font-medium flex items-center justify-center sm:justify-start gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open to Work
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-12 text-center">Tech Stack & Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <!-- Skill Card -->
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">HTML5</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">CSS3 / Tailwind</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fab fa-js text-4xl text-yellow-400 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">JavaScript (ES6+)</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fab fa-react text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">React.js</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fab fa-git-alt text-4xl text-red-500 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">Git & GitHub</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fas fa-mobile-alt text-4xl text-purple-400 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">Responsive Design</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fas fa-database text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">MIS & Analytics</h3>
+                </div>
+                <div class="bg-cardBg p-6 rounded-xl border border-slate-800 text-center hover:border-primary/50 transition group">
+                    <i class="fas fa-bolt text-4xl text-amber-400 mb-3 group-hover:scale-110 transition"></i>
+                    <h3 class="font-semibold text-white">Performance</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4 text-center">Featured Projects</h2>
+            <p class="text-slate-400 text-center mb-12 max-w-xl mx-auto">Here are some of the projects I've built. Replace these with your own best work!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition flex flex-col">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-500 font-medium">
+                        Project Thumbnail 1
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Modern E-Commerce Store</h3>
+                        <p class="text-slate-400 text-sm mb-4 flex-grow">A responsive online store featuring product filtering, shopping cart state management, and smooth UI animations.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">React</span>
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">Tailwind CSS</span>
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">API</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="#" class="text-sm font-medium text-white hover:text-primary transition flex items-center gap-1.5"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5"><i class="fab fa-github">Code</i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-slate-800 hover:border-slate-700 transition flex flex-col">
+                    <div class="h-48 bg-slate-800 flex items-center justify-center text-slate-500 font-medium">
+                        Project Thumbnail 2
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Dashboard & Analytics UI</h3>
+                        <p class="text-slate-400 text-sm mb-4 flex-grow">An administrative dashboard featuring interactive charts, data tables, and light/dark theme toggles.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">JavaScript</span>
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">Tailwind CSS</span>
+                            <span class="bg-slate-800 text-primary text-xs px-2.5 py-1 rounded-md font-medium">Chart.js</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="#" class="text-sm font-medium text-white hover:text-primary transition flex items-center gap-1.5"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Let's Work Together</h2>
+            <p class="text-slate-400 mb-8">I'm currently looking for entry-level front-end development roles. Feel free to reach out!</p>
+            
+            <a href="mailto:your.email@example.com" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-600 text-white font-medium px-8 py-4 rounded-xl text-lg transition shadow-xl shadow-primary/25 mb-10">
+                <i class="fas fa-envelope"></i> your.email@example.com
+            </a>
+
+            <div class="flex justify-center space-x-6 text-2xl text-slate-400">
+                <a href="https://github.com" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-primary transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.email@example.com" class="hover:text-red-400 transition"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Awab Abdelgadir. Built with passion & code.</p>
+    </footer>
+
+</body>
+</html>
